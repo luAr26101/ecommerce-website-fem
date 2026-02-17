@@ -1,20 +1,40 @@
 @import "tailwindcss";
 
+// Use @theme when you want a design token to map directly to a utility class, 
+// and use :root for defining regular CSS variables that shouldn't have corresponding utility classes.
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FAFAFA;
+  --foreground: #101010;
 }
+
+// Official docs: https://tailwindcss.com/docs/theme
+// Theme variables map to different utility classes and variants
+// Override a default theme variable value by redefining it within @theme:
+// Theme variables in the --breakpoint-* namespace determine which responsive breakpoint variants exist in your project.
+// Theme variables are defined in namespaces and each namespace corresponds to one or more utility class or variant APIs.
+// Defining new theme variables in these namespaces will make new corresponding utilities and variants available in your project.
+// Override a default theme variable value by redefining it within @theme:
+
+// To completely disable the default theme and use only custom values, set the global theme variable namespace to initial: --*: initial;
+
+// Using the inline option, the utility class will use the theme variable value instead of referencing the actual theme variable.
+// By default only used CSS variables will be generated in the final CSS output. 
+// If you want to always generate all CSS variables, you can use the static theme option.
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: oklch(0.6792 0.1309 48.59);
+  --color-primary-light: oklch(0.8172 0.1055 49.7);
+  --color-light-gray: oklch(0.9581 0 0);
   --font-sans: var(--font-manrope);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #101010;
+    --foreground: #FFFFFF;
   }
 }
 
