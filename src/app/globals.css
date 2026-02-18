@@ -6,6 +6,7 @@ and use :root for defining regular CSS variables that shouldnt have correspondin
 :root {
   --background: #fafafa;
   --foreground: #101010;
+  --border-color: #979797;
 }
 
 /* https://tailwindcss.com/docs/theme
@@ -25,9 +26,11 @@ If you want to always generate all CSS variables, you can use the static theme o
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-background-hero: oklch(0.209 0 0);
   --color-primary: oklch(0.6792 0.1309 48.59);
   --color-primary-light: oklch(0.8172 0.1055 49.7);
   --color-light-gray: oklch(0.9581 0 0);
+
   --font-sans: var(--font-manrope);
 }
 
